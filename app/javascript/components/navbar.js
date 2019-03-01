@@ -1,14 +1,14 @@
 const HideNavbarOnScroll = () => {
-  const prevScrollpos = window.pageYOffset;
+  let prevScrollpos = window.pageYOffset;
   window.onscroll = function() {
-    const currentScrollpos = window.pageYOffset;
+    let currentScrollpos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       navbar.classList.add('navbar-wagon-hide')
     }
     else {
         navbar.classList.remove('navbar-wagon-hide');
       }
-      prevScrollpos = currentScrollpos
+       prevScrollpos = currentScrollpos
   }
 }
 
