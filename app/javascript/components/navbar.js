@@ -1,14 +1,15 @@
-const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar-wagon');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar-wagon-white');
-      } else {
-        navbar.classList.remove('navbar-wagon-white');
+const HideNavbarOnScroll = () => {
+  const prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    const currentScrollpos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      navbar.classList.add('navbar-wagon-hide')
+    }
+    else {
+        navbar.classList.remove('navbar-wagon-hide');
       }
-    });
+      prevScrollpos = currentScrollpos
   }
-};
+}
 
-export { initUpdateNavbarOnScroll };
+export { HideNavbarOnScroll };

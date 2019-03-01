@@ -19,5 +19,5 @@ initSelect2();
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { HideNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
