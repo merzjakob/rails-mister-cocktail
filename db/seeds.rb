@@ -15,7 +15,7 @@ ingredients['drinks'].each do |drink|
   Ingredient.create(name: drink['strIngredient1'])
 end
 
-cocktails = [{ name: 'Bloody Mary' }, { name: 'Caipirinha' }, { name: 'Mojito' }, { name: 'Zombie' }, { name: 'Moskow Mule' }, { name: 'Gin Tonic' }]
+cocktails = [{ name: 'Bloody Mary',photo:  }, { name: 'Caipirinha',photo:  }, { name: 'Mojito',photo:  }, { name: 'Zombie',photo:  }, { name: 'Moskow Mule',photo:  }, { name: 'Gin Tonic',photo:  }]
 
 cocktails.each do |cocktail|
   Cocktail.create cocktail

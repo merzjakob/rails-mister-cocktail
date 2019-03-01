@@ -1,12 +1,14 @@
 <!-- <h1>List of available cocktails</h1> -->
- <div>
     <%= render "shared/banner" %>
-  </div>
 <div class="container">
   <div class="row">
     <% @cocktails.each do |c|  %>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?cocktail');">
+      <% if c.photo.present?  %>
+        <div class="card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("<%= cl_image_path c.photo%>");'>
+      <% else  %>
+        <div class="card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("https://source.unsplash.com/1600x900/?cocktail");'>
+      <% end  %>
         <div class="card-description">
           <h3> <%= c.name %> </h3>
         </div>

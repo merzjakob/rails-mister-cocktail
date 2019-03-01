@@ -1,6 +1,7 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
 <%= link_to 'Back to home', cocktails_path,class: "btn btn-primary"  %>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 </div>
 
 <p><%  @cocktail.doses.each do |dose| %></p>
@@ -9,12 +10,7 @@
   <%= link_to 'Delete', dose_path(dose), method: "delete", class: "btn btn-primary"  %>
 <% end  %>
 
-<div class="container">
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description, label: "Description" %>
-  <%= f.association :ingredient, label: "Choose from ingredient list"%>
-  <%= f.submit "Add dose", class: "btn btn-primary" %>
-<% end %>
+<%= render 'doses/form'%>
 
 </div>
 
